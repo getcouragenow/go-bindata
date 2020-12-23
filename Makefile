@@ -1,6 +1,10 @@
 all:
 	make -C testdata
 
+git-push:
+	git add . 
+	git commit -m 'whatever'
+	git push origin master
 
 COMMIT_SHA=$(shell git rev-parse HEAD)
 TAG_VERSION=v3.1.5
