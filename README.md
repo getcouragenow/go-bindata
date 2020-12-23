@@ -18,6 +18,7 @@ To install the library and command line program, use the following:
 	go get -u github.com/go-bindata/go-bindata/...
 
 
+
 ### Usage
 
 Conversion is done on one or more sets of files. They are all embedded in a new
