@@ -1,18 +1,18 @@
 all:
 	make -C testdata
 
-git-push:
+git-print:
+	@echo GIT_COMMIT_SHA : $(GIT_COMMIT_SHA)
+	@echo GIT_TAG_VERSION : $(GIT_TAG_VERSION)
+
+git-origin-push:
 	git add . 
-	git commit -m 'whatever'
+	git commit -m 'various'
 	git push origin master
 
-COMMIT_SHA=$(shell git rev-parse HEAD)
-TAG_VERSION=v3.1.5
+GIT_COMMIT_SHA=$(shell git rev-parse HEAD)
+GIT_TAG_VERSION=v3.1.5
 
-tag-print:
-	@echo COMMIT_SHA : $(COMMIT_SHA)
-	@echo TAG_VERSION : $(TAG_VERSION)
-
-tag-push:
-	git tag -a $(TAG_VERSION) $(COMMIT_SHA) -m "some commit msg"
-	git push origin $(TAG_VERSION)
+git-origin-tag-push:
+	git tag -a $(GIT_TAG_VERSION) $(GIT_COMMIT_SHA) -m "some commit msg"
+	git push origin $(GIT_TAG_VERSION)
